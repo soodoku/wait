@@ -1,0 +1,14 @@
+.*
+!.gitignore
+!.gitattributes
+!.travis.yml
+!.pep8speaks.yml
+*.pyc
+*.log
+output.csv
+./data
+build/
+venv/
+dist/
+ethnicolr.egg-info/
+ethnicolr/data/fl_voter_reg/
