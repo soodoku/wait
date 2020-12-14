@@ -4,7 +4,13 @@ We scrape data from [CA DMV](https://www.dmv.ca.gov/portal/field-office/woodland
  
 ## Data
  
-There are 163 DMV field offices in CA. There are however [178 DMV offices](data/yogov_dmv_list.txt) listed on https://yogov.org/dmv/california/california-dmv-locations/. 
+There are 175 DMV field offices in CA. There are [178 DMV offices](data/yogov_dmv_list.txt) listed on https://yogov.org/dmv/california/california-dmv-locations/. However a couple have closed since yogov compiled their list.
+
+For each DMV field office we collect...
+
+- basic data: "name", "street", "locality", "region", and "zip".
+- wait time (minutes) by hour: wait time for the Monday 2pm hour is stored in the column "M14".
+- potential services offered: "title transfers", "licensing services", "replace lost/stolen/damaged", "plates permits & placards", "testing", "records", "registration", "request for miscellaneous original documents."
 
 ## Analysis
 
