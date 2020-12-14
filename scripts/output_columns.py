@@ -13,5 +13,5 @@ OUTPUT_COLUMN_NAMES = ['name', 'street', 'locality', 'region', 'zip',
 'F13', 'F14', 'F15', 'F16', 'F17', 'F18', 'F19', 'F20', 'F21', 'F22', 'F23', 
 'SA0', 'SA1', 'SA2', 'SA3', 'SA4', 'SA5', 'SA6', 'SA7', 'SA8', 'SA9', 'SA10', 'SA11', 'SA12',
 'SA13', 'SA14', 'SA15', 'SA16', 'SA17', 'SA18', 'SA19', 'SA20', 'SA21', 'SA22', 'SA23',
-'title transfers', 'licensing services', 'replace lost/stolen/damaged', 'plates, permits, & placards',
+'title transfers', 'licensing services', 'replace lost/stolen/damaged', "plates permits & placards",
 'testing', 'records', 'registration', 'request miscellaneous original documents', 'other']

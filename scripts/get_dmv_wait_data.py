@@ -14,10 +14,7 @@ from bs4 import BeautifulSoup
 import csv
 import os
 import json
-from ca_locales import CA_locales # list of ca locations
-from services import DMV_SERVICES # list of dmv service offerings
-from output_columns import OUTPUT_COLUMN_NAMES
-
+import ca_locales, services, output_columns
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # URL FINDER
@@ -71,7 +68,7 @@ def write_fo_name_and_link_csv(link, file):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writerow({'link': link})
 
-
+# CA_locales = ca_locales.CA_locales
 # CA_locales = [l.replace(" ", "-") for l in CA_locales] #format space to dash
 # CA_locales = [l.lower() for l in CA_locales] #make all lowercase
 
@@ -107,11 +104,7 @@ def parse_dmv_fo_page(fo_url):
     # print(dmv_data_dict)
 
     # Services Provided
-    services_dict = initialize_services_dict()
-    services = soup.findAll("ul", {"class": "location-services-list"} )[0].findAll("li")
-    for service in services:
-        s = service.get_text().lower().rstrip()
-        services_dict[s] = 1
+    services_dict = parse_services(soup)
     
     dmv_result_dict = dict(dmv_data_dict)
     dmv_result_dict.update(wait_times_dict)
@@ -181,7 +174,13 @@ def parse_dmv_specific_data(soup):
  
     return dmv_data_dict
 
-
+def parse_services(soup):
+    services_dict = initialize_services_dict()
+    services = soup.findAll("ul", {"class": "location-services-list"} )[0].findAll("li")
+    for service in services:
+        s = service.get_text().lower().rstrip().replace(",", "")
+        services_dict[s] = 1
+    return services_dict
 # sets up up an empty dictionary corresponding to every day and every hour
 # wait_times_dict will store wait times with a key of DayHour(military time), value: (wait time in minutes)
 # e.g. SU0: NA....corresponding to Sunday at midnight with no value (DMV closed) and M8: 10...corresponding to Monday at 8 am with a 10 minute wait.
@@ -200,24 +199,25 @@ def initialize_wait_times_dict():
 
 def initialize_services_dict():
     services_dict = {}
-    dmv_services = [i.lower().rstrip() for i in DMV_SERVICES]
+    dmv_services = [i.lower().rstrip() for i in services.DMV_SERVICES]
     for service in dmv_services:
         services_dict[service] = "NA"
     return services_dict
 
 
-csv_file = "dmv_data_output.csv" #output file
+csv_file = "../data/dmv_data_output_12_14_2020.csv" #output file
 
 # read fo_full_list.csv to list
-with open('fo_full_list.csv', newline='') as f:
+with open('../data/fo_full_list.csv', newline='') as f:
     dmv_list = [row[0] for row in csv.reader(f)] 
 
 # print(wait_times_dict)
 
 for fo_url in dmv_list:
+    print("scraping: {}".format(fo_url))
     dmv_result_dict = parse_dmv_fo_page(fo_url)
     # write dmv data to csv
     with open(csv_file, 'a+', newline='') as csvfile:
-        fieldnames = OUTPUT_COLUMN_NAMES
+        fieldnames = output_columns.OUTPUT_COLUMN_NAMES
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writerow(dmv_result_dict)
