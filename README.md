@@ -4,7 +4,7 @@ We scrape data from [CA DMV](https://www.dmv.ca.gov/portal/field-office/woodland
  
 ## Data
  
-It looks like there are approximately 163 DMV field offices in CA (scraper wasn't able to find any more). This number does however seem to be backed up elsewhere. https://yogov.org/dmv/california/california-dmv-locations/ estimates ~180 field offices. It's possible I've missed a couple in scraping. Will think through how I might determine if this is the case.
+There are 163 DMV field offices in CA. There are however [178 DMV offices](data/yogov_dmv_list.txt) listed on https://yogov.org/dmv/california/california-dmv-locations/. 
 
 ## Analysis
 
