@@ -8,7 +8,7 @@ There are 175 DMV field offices in CA. There are [178 DMV offices](data/yogov_dm
 
 For each DMV field office we collect...
 
-- basic data: "street", "locality", "region", and "zip".
+- basic data: "name", "street", "locality", "region", and "zip".
 - wait time (minutes) by hour: wait time for the Monday 2pm hour is stored in the column "M14".
 - potential services offered: "title transfers", "licensing services", "replace lost/stolen/damaged", "plates permits & placards", "testing", "records", "registration", "request for miscellaneous original documents."
 
