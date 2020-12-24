@@ -20,6 +20,8 @@ Next, to assess whether the staffing levels are potentially suboptimal, we estim
 
 Next, we download town level data on sociodemographics and plot a loess between median income, % African Americans, etc. and the number of services offered, total open time, average wait time, etc. 
 
+We assume that the set of patrons for each DMV office is the set of households for which the DMV office is the closest. Ideally, we want to get the sociodemographic composition of that set of patrons. This requires us to know where each household is located and the sociodemographics of each household. Then, the algorithm for solving it correctly is n (households)*DMV offices. We can get some of the data on household location from voter files, property records, etc., but data would not be complete and we would need to infer variables of interest. We can solve it by choosing a more coarse geographical unit for which census data is available and then solve a problem that finds the closest DMV office for each coarse geographical unit, approximated by its centroid. 
+
 ## Authors 
 
 Noah Finberg and Gaurav Sood
