@@ -48,15 +48,29 @@ Yet more reassuringly, the 75th percentile of the wait times is about 20 minutes
 
 ![75th Percentile Wait Times](figs/dmv_75_percentile_wait_by_field_office.png)
 
-Plotting the 25th percentile provides a different view. The median of the 25th percentile is around 2 minutes. This suggests that the offices are likely overstaffed for 25% of the hours as a 2 minute turnaround time means that many people are getting served as soon as they get in, which suggests that some of the officials are likely waiting while people pour in. The short turnaround times could be explained by advanced reservations but you have to pair the data above to get at what percentage of people are likely using the advanced reservation system. (There is of course the possibility that people who use advanced reservation system book during certain times more often.) The larger question is about staffing and about what the optimal staffing levels should look like if say the objective was to reduce wait time given fixed resources (and then plausibly expand it in a way that prices people's time appropriately so that we are increasing welfare. A [recent paper](http://s3.amazonaws.com/fieldexperiments-papers2/papers/00720.pdf) suggests Value of Time at about $19/hr with variation across cities.)
+Plotting the 25th percentile provides a different view. The median of the 25th percentile is around 2 minutes. This suggests that the offices are likely overstaffed for 25% of the hours as a 2 minute turnaround time means that many people are getting served as soon as they get in, which suggests that some of the officials are likely waiting while people pour in. The short turnaround times could be explained by advanced reservations but you have to pair the data above to get at what percentage of people are likely using the advanced reservation system. (There is of course the possibility that people who use advanced reservation system book during certain times more often.) The larger question is about staffing and about what the optimal staffing levels should look like if say the objective was to reduce wait time given fixed resources (and then plausibly expand it in a way that prices people's time appropriately so that we are increasing welfare. A [recent paper](http://s3.amazonaws.com/fieldexperiments-papers2/papers/00720.pdf) suggests Value of Time at about $19/hr with variation across cities.) 
+
+Note that by publishing data on wait times, it is likely that CA DMV is already smoothing demand without changing staffing though it is not an optimal way of doing it as there is a concern that the shortest published wait times may see a stampede.
 
 ![25th Percentile Wait Times](figs/dmv_25_percentile_wait_by_field_office.png)
 
-The average wait time, averaging over the average for all hours (days). We also estimate the 25th and 75th percentile of wait times for each location.
+The point about staffing levels becomes clearer when we plot the wait times by the time of the day and the day of the week. You see really short wait times for after or before office hours (5 pm, 6 pm, and 8 am) followed by hours at the edge of office hour times (4pm and 8 am).
 
-Next, to assess whether the staffing levels are potentially suboptimal, we estimate average by hour and by weekday, again averaging across locations.
+![Median Wait Times by DoW](figs/dmv_average_wait_time_by_day_by_field_office.png)
 
-Next, we download town level data on sociodemographics and plot a loess between median income, % African Americans, etc. and the number of services offered, total open time, average wait time, etc. 
+![Median Wait Times by ToD](figs/dmv_average_wait_time_by_hour_by_field_office.png)
+
+Looking at the relationship of wait times and local zip code sociodemographics, we see modest relationships. For median wait times and average commute time in the zip code, we see a gently rising trend from 10 minutes to commute to about 30 with wait times going from a few minutes to 12 or so minutes.
+
+![Median Wait Times by Commute Time](figs/loess_avg_commute_dmv_avg_wait.png)
+
+The relationship with median income is weaker still. 
+
+![Median Wait Times by Income](figs/loess_median_household_income_dmv_average_wait.png)
+
+The only consistent pattern we see is with proportion white with a sharp drop starting around 65% white. The median wait time goes from about 11 or so minutes to about 5. The net impact per person may be modest but pooled across a community, the lost minutes may become sizable. 
+
+![Median Wait Times by Prop. White](figs/loess_percentage_of_population_white_dmv_average_wait.png)
 
 ### Authors 
 
