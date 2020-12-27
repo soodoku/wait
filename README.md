@@ -20,6 +20,8 @@ For each DMV field office we collected:
 
 The final dataset can be downloaded [here](https://github.com/soodoku/wait/blob/master/data/dmv_data_output_12_14_2020.csv). 
 
+**Note** CA DMV does not report over how long a period it averages the wait time. 
+
 To scrape the data, we ran [scripts/get_dmv_wait_data.py](scripts/get_dmv_wait_data.py). The script depends on three pieces of data which we have stored as python lists:
     * [Office Locales](scripts/ca_locales.py)
     * [Services](scripts/services.py)
@@ -37,6 +39,18 @@ We assume that the set of patrons for each DMV office is the set of households f
 * [Correlations Between Wait Time and Sociodemographics](Sociodem.ipynb)
 
 #### Results
+
+CA DMV on the whole seems to be doing an excellent job. The median wait time (median of the hourly buckets) across facilities is around 12 minutes. There are, however, a few field offices, e.g., Hollywood and Temecula, where the median wait time is over 40 minutes.
+
+![Median Wait Times](figs/dmv_average_wait_by_field_office.png)
+
+Yet more reassuringly, the 75th percentile of the wait times is about 20 minutes. The 75th percentile of the 75th percentile is just over 30 minutes. But once again there are a few offices where the numbers look alarming. For instance, in Temecula, the 75th percentile is nearly 70 minutes.
+
+![75th Percentile Wait Times](figs/dmv_75_percentile_wait_by_field_office.png)
+
+Plotting the 25th percentile provides a different view. The median of the 25th percentile is around 2 minutes. This suggests that the offices are likely overstaffed for 25% of the hours as a 2 minute turnaround time means that many people are getting served as soon as they get in, which suggests that some of the officials are likely waiting while people pour in. The short turnaround times could be explained by advanced reservations but you have to pair the data above to get at what percentage of people are likely using the advanced reservation system. (There is of course the possibility that people who use advanced reservation system book during certain times more often.) The larger question is about staffing and about what the optimal staffing levels should look like if say the objective was to reduce wait time given fixed resources (and then plausibly expand it in a way that prices people's time appropriately so that we are increasing welfare. A [recent paper](http://s3.amazonaws.com/fieldexperiments-papers2/papers/00720.pdf) suggests Value of Time at about $19/hr with variation across cities.)
+
+![25th Percentile Wait Times](figs/dmv_25_percentile_wait_by_field_office.png)
 
 The average wait time, averaging over the average for all hours (days). We also estimate the 25th and 75th percentile of wait times for each location.
 
