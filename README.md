@@ -62,15 +62,15 @@ The point about staffing levels becomes clearer when we plot the wait times by t
 
 Looking at the relationship of wait times and local zip code sociodemographics, we see modest relationships. For median wait times and average commute time in the zip code, we see a gently rising trend from 10 minutes to commute to about 30 with wait times going from a few minutes to 12 or so minutes.
 
-![Median Wait Times by Commute Time](figs/loess_median_commute_dmv_avg_wait.png)
+![Median Wait Times by Commute Time](figs/loess_avg_commute_dmv_median_wait.png)
 
 The relationship with median income is weaker still. 
 
-![Median Wait Times by Income](figs/loess_median_household_income_dmv_average_wait.png)
+![Median Wait Times by Income](figs/loess_median_household_income_dmv_median_wait.png)
 
 The only consistent pattern we see is with proportion white with a sharp drop starting around 65% white. The median wait time goes from about 11 or so minutes to about 5. The net impact per person may be modest but pooled across a community, the lost minutes may become sizable. 
 
-![Median Wait Times by Prop. White](figs/loess_percentage_of_population_white_dmv_average_wait.png)
+![Median Wait Times by Prop. White](figs/loess_percentage_of_population_white_dmv_median_wait.png)
 
 ### Authors 
 
