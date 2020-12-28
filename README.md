@@ -56,9 +56,9 @@ Note that by publishing data on wait times, it is likely that CA DMV is already 
 
 The point about staffing levels becomes clearer when we plot the wait times by the time of the day and the day of the week. You see really short wait times for after or before office hours (5 pm, 6 pm, and 8 am) followed by hours at the edge of office hour times (4pm and 8 am).
 
-![Median Wait Times by DoW](figs/dmv_average_wait_time_by_day_by_field_office.png)
+![Median Wait Times by DoW](figs/dmv_median_wait_time_by_day_by_field_office.png)
 
-![Median Wait Times by ToD](figs/dmv_average_wait_time_by_hour_by_field_office.png)
+![Median Wait Times by ToD](figs/dmv_median_wait_time_by_hour_by_field_office.png)
 
 Looking at the relationship of wait times and local zip code sociodemographics, we see modest relationships. For median wait times and average commute time in the zip code, we see a gently rising trend from 10 minutes to commute to about 30 with wait times going from a few minutes to 12 or so minutes.
 
