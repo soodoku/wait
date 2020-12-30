@@ -1,8 +1,8 @@
-## Get in Line: Waiting Times at DMV
+## Get in Line: Waiting Times at the DMV
+ 
+The quality of public services matters a lot. If you have to stand in a long line to [pay your electricity bill](https://www.bbc.com/news/world-asia-india-38088385), as is the norm in some third-world countries, it takes away from the time you have to earn money or the time you have for leisure. If there is trash on the streets, it is not just an eyesore but also potentially a breeding ground for disease. 
 
-The quality of public services matter a lot. If you have to stand in a long line to [pay your electricity bill](https://www.bbc.com/news/world-asia-india-38088385), as was the norm in some third-world countries, it takes away from the time you have to earn money or the time you have for leisure. In this note, we shed light on one aspect of quality for one such public service---waiting times at the DMV.
-
-We scrape data from [CA DMV](https://www.dmv.ca.gov/), which provides average wait times by hour of day for all hours for which a facility is open, to estimate the median average wait time (median of the hourly averages that are reported), variation in wait times by day, hour, and sociodemographics of the local area. 
+In this note, we shed light on an important aspect of quality for one such public service---waiting times at the DMV. We scrape waiting time data from [CA DMV](https://www.dmv.ca.gov/). The DMV site provides average wait times by hour of the day for all the hours for which a facility is open. We use the data to estimate the median average wait time (median of the hourly averages), variation in wait times by day, hour, and the relationship with local sociodemographics. 
 
 ### Data
 
@@ -48,7 +48,12 @@ Yet more reassuringly, the 75th percentile of the wait times is about 20 minutes
 
 ![75th Percentile Wait Times](figs/dmv_75_percentile_wait_by_field_office.png)
 
-Plotting the 25th percentile provides a different view. The median of the 25th percentile is around 2 minutes. This suggests that the offices are likely overstaffed for 25% of the hours as a 2 minute turnaround time means that many people are getting served as soon as they get in, which suggests that some of the officials are likely waiting while people pour in. The short turnaround times could be explained by advanced reservations but you have to pair the data above to get at what percentage of people are likely using the advanced reservation system. (There is of course the possibility that people who use advanced reservation system book during certain times more often.) The larger question is about staffing and about what the optimal staffing levels should look like if say the objective was to reduce wait time given fixed resources (and then plausibly expand it in a way that prices people's time appropriately so that we are increasing welfare. A [recent paper](http://s3.amazonaws.com/fieldexperiments-papers2/papers/00720.pdf) suggests Value of Time at about $19/hr with variation across cities.) 
+Plotting the 25th percentile provides a different view. The median of the 25th percentile is around 2 minutes. This suggests that the offices are plausibly overstaffed for 25% of the hours as a 2 minute turnaround time means that many people are getting served as soon as they get in, which suggests that some of the officials are likely waiting while people pour in. The short turnaround times could be explained by advanced reservations but you have to pair the data above to get at what percentage of people are likely using the advanced reservation system. (There is of course the possibility that people who use advanced reservation system book during certain times more often.) The larger question is about staffing and about what the optimal staffing levels should look like if say the objective was to reduce wait time given fixed resources (and then plausibly expand it in a way that prices people's time appropriately so that we are increasing welfare. A [recent paper](http://s3.amazonaws.com/fieldexperiments-papers2/papers/00720.pdf) suggests Value of Time at about $19/hr with variation across cities.) 
+
+the problem of over or understaffing depends on how many customers each location is serving, right? E.g. wait time might be 10 minutes in one area on a given hour on a given day, but if one DMV services 100 people in that time and another services 1000, you might say that impact of staffing is 10x impactful in terms of time saved in the second case.
+
+minimum required staffing -
+It might be the case that a lot of DMVs that have 25 percentile wait times under say 5 min are already minimally staffed (i.e. they have one person there who can help during those hours)…could be totally wrong on this, but I’d think in some of the smaller field officers this could be the case. In that case, they wouldn’t be overstaffed, but optimally staffed.
 
 Note that by publishing data on wait times, it is likely that CA DMV is already smoothing demand without changing staffing though it is not an optimal way of doing it as there is a concern that the shortest published wait times may see a stampede.
 
@@ -71,6 +76,16 @@ The relationship with median income is weaker still.
 The only consistent pattern we see is with proportion white with a sharp drop starting around 65% white. The median wait time goes from about 11 or so minutes to about 5. The net impact per person may be modest but pooled across a community, the lost minutes may become sizable. 
 
 ![Median Wait Times by Prop. White](figs/loess_percentage_of_population_white_dmv_median_wait.png)
+
+### Future
+
+We plan to explore the following in future versions: 
+
+1. CA DMV website during business hours also provides live wait times. This allows us to build more granular data on wait times. 
+
+2. Join to sociodemographic data of the relevant subset of users of each DMV
+
+3. Collect more data from different states and at future dates to see how the data evolves. 
 
 ### Authors 
 
