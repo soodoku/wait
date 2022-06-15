@@ -1,4 +1,4 @@
-## Get in Line: Waiting Times at the DMV
+## Out of Line: Waiting Times at the DMV
  
 The quality of public services matters a lot. If you have to stand in a long line to [pay your electricity bill](https://www.bbc.com/news/world-asia-india-38088385), as is the norm in some third-world countries, it takes away from the time you have to earn money or the time you have for leisure. If there is trash on the streets, it is not just an eyesore but also potentially a breeding ground for disease. 
 
@@ -86,7 +86,7 @@ We plan to explore the following in future versions:
 
 3. Collect more data from different states and at future dates to see how the data evolves. 
 
-### Authors 
+### Authors
 
 Noah Finberg and Gaurav Sood
 
